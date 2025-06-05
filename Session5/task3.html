@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label{
+            margin-right: 40px;
+        }
+    </style>
+</head>
+<body>
+    <img src="https://th.bing.com/th/id/R.256ff89b8455578cb07f46a207a4d6ae?rik=wamzqu6ozFnjjw&riu=http%3a%2f%2fwww.publicdomainpictures.net%2fpictures%2f210000%2fvelka%2fdoctor-1490804643Rfi.jpg&ehk=xVsfwkQ4RsL0lPNklpn0uYssY%2fJJqHho%2bhw1KPmGMXU%3d&risl=&pid=ImgRaw&r=0" style="float: left; width: 400px; height: 500px;">
+    <h1>Doctor Appointment Form</h1>
+    <hr style="border-color: brown;">
+    <form action="backend.php">
+        <label for name="date">Appointment Date</label>
+        <input type="date"><br><br>
+        <label for name="time">Appointment Time</label>
+        <input type="date"><br><br>
+        <label for name="name">Name</label>
+        <input type="text" placeholder="First" style="margin-right: 20px;"><input type="text" placeholder="Last"><br><br>
+        <label for name="Gender">Gender</label>
+        Male<input type="radio" name="gender">Female<input type="radio" name="gender"><br><br>
+        <label>Phone</label>
+        <input type="phone"><br><br>
+        <label for name="name">Address</label>
+        <input type="text" placeholder="City" style="margin-right: 20px;"><input type="text" placeholder="State"><br><br>
+        <label>Your Query</label>
+        <textarea row="4" cols="20"></textarea>
+        <br><br><label>Appointent Type</label>
+        Select which Appointent type(s) you require:<br>
+        <input type="checkbox">Cervix checkup<br>
+        <input type="checkbox">Heart checkup<br>
+        <input type="checkbox">Eye checkup<br>
+        <input type="checkbox">Hearing test<br>
+    </form>
+</body>
+</html>
