@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Checkerboard</title>
+  <style>
+    .board {
+      display: grid;
+      grid-template-columns: repeat(8, 40px);
+      grid-template-rows: repeat(8, 40px);
+      border: 2px solid black;
+      width: fit-content;
+      margin: 50px auto;
+    }
+
+    .cell {
+      width: 40px;
+      height: 40px;
+    }
+
+    .black {
+      background-color: black;
+    }
+
+    .pink {
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+  <div class="board">
+    <!-- Manually define the 64 squares (8x8) -->
+    <div class="cell black"></div><div class="cell pink"></div><div class="cell black"></div><div class="cell pink"></div><div class="cell black"></div><div class="cell pink"></div><div class="cell black"></div><div class="cell pink"></div>
+    <div class="cell pink"></div><div class="cell black"></div><div class="cell pink"></div><div class="cell black"></div><div class="cell pink"></div><div class="cell black"></div><div class="cell pink"></div><div class="cell black"></div>
+    <div class="cell black"></div><div class="cell pink"></div><div class="cell black"></div><div class="cell pink"></div><div class="cell black"></div><div class="cell pink"></div><div class="cell black"></div><div class="cell pink"></div>
+    <div class="cell pink"></div><div class="cell black"></div><div class="cell pink"></div><div class="cell black"></div><div class="cell pink"></div><div class="cell black"></div><div class="cell pink"></div><div class="cell black"></div>
+    <div class="cell black"></div><div class="cell pink"></div><div class="cell black"></div><div class="cell pink"></div><div class="cell black"></div><div class="cell pink"></div><div class="cell black"></div><div class="cell pink"></div>
+    <div class="cell pink"></div><div class="cell black"></div><div class="cell pink"></div><div class="cell black"></div><div class="cell pink"></div><div class="cell black"></div><div class="cell pink"></div><div class="cell black"></div>
+    <div class="cell black"></div><div class="cell pink"></div><div class="cell black"></div><div class="cell pink"></div><div class="cell black"></div><div class="cell pink"></div><div class="cell black"></div><div class="cell pink"></div>
+    <div class="cell pink"></div><div class="cell black"></div><div class="cell pink"></div><div class="cell black"></div><div class="cell pink"></div><div class="cell black"></div><div class="cell pink"></div><div class="cell black"></div>
+  </div>
+</body>
+</html>
