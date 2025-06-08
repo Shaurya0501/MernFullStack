@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SideNav Bar</title>
+    <style>
+        .sidenavbar
+        {
+            position: fixed;
+        }
+        .sidenavbar a{
+            position: absolute;
+            left: -120px;
+            transition: 0.3s;
+            padding: 20px;
+            width: 150px;
+            text-decoration: none;
+            color: white;
+        }
+        .sidenavbar a:hover
+        {
+            left: 0;
+        }
+        .green{
+            top: 20px;
+            background-color: green;
+        }
+        .blue{
+            top: 80px;
+            background-color: blue;
+        }
+        .red{
+            top: 140px;
+            background-color: red;
+        }
+        .brown{
+            top: 200px;
+            background-color: brown;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hoverable Sidenav Bar</h1>
+    <div class="sidenavbar">
+       <a href="#" class="green">Home</a>
+       <a href="#" class="blue">Login</a>
+       <a href="#" class="red">Logout</a>
+       <a href="#" class="brown">About us</a>
+    </div>
+</body>
+</html>
