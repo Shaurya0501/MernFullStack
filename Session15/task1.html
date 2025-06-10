@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            margin: 20px;
+        }
+        div{
+            display: flex;
+            flex-direction: row;
+        }
+        span{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <center><form id="regform">
+        <h3>Registration Form</h3>
+    Name: <input type="text" class="form">
+    <span class="error"></span><br>
+Email: <input type="text" class="form"><span class="error"></span><br>
+Website: <input type="text" class="form"><span class="error"></span><br>
+Message: <textarea rows="5" cols="15" class="form"></textarea><span class="error"></span><br>
+<button>Submit</button>
+</form>
+</center>
+<script>
+document.getElementById("regform").addEventListener("submit",function(e){
+    e.preventDefault();
+    var form=document.getElementsByClassName("form");
+    var errors=document.getElementsByClassName("error");
+    let isValid=true;
+    for(let i=0;i<form.length;i++)
+{
+    errors[i].innerHTML="";
+    if(form[i].value.trim()=="")
+{
+    errors[i].innerHTML="This field is required";
+    form[i].style.border="2px solid red";
+}
+}
+})
+</script>
+</body>
+</html>
