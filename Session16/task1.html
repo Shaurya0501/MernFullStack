@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Validation using JavaScript</h1>
+    <center>Enter Mobile Number <input type="text" name="phone" placeholder="Enter 10 digit Mobile Number"> <span id="error"></span>
+    <br><br>
+<button onclick="validate()">Validate</button></center>
+<script>
+    function validate()
+    {
+        if(document.getElementsByName("phone")[0].value.length!=10)
+    {
+        document.getElementById("error").textContent="Invalid phone number";
+         document.getElementById("error").style.color="red";
+    }
+    else
+    {
+        document.getElementById("error").textContent="Valid phone number";
+     document.getElementById("error").style.color="green";
+    }
+    }
+</script>
+</body>
+</html>
