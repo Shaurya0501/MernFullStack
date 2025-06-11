@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+    <style>
+        body{
+            background-color: blueviolet;
+            color: aliceblue;
+            align-items: center;
+        }
+        #box{
+            border-radius: 25px;
+            padding: 20px;
+            background-color: aliceblue;
+            box-shadow: 10px 5px 0 black;
+            width: 800px;
+            height: 100px;
+        }
+        #res{
+            display: flex;
+            flex-direction: row;
+        }
+        #year{
+            height: 300px;
+            width: 300px;
+            background-color: aliceblue;
+            color: black;
+             box-shadow: 10px 5px 0 black;
+             margin: 100px;
+             border-radius: 25px;
+        }
+        #month{
+            height: 300px;
+            width: 300px;
+            background-color: aliceblue;
+            color: black;
+             box-shadow: 5px 5px 0 black;
+             margin: 100px;
+             border-radius: 25px;
+        }
+        #day{
+            height: 300px;
+            width: 300px;
+            background-color: aliceblue;
+            color: black;
+             box-shadow: 5px 5px 0 black;
+             margin: 100px;
+             border-radius: 25px;
+        }
+        .out{
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+  <center><h1>AGE CALCULATOR</h1>
+    <div id="box">
+    <input type="date" id="date" style="height: 50px; width: 200px; background-color: lightgray; border: none; border-radius: 5px; font-size: 20px; text-transform:uppercase; padding: 8px;">
+    <button type="submit" style="color: whitesmoke; background-color: blueviolet; margin-left: 50px; height: 50px; width: 150px; border: none; font-style:normal; font-size: 25px;" onclick="calc()">Calculator</button>
+    </div><br>
+    <div id="res">
+        <div id="year">
+            <input type="number" readonly id="outYear" class="out" style="height: 100px; font-size: 20px; font-weight: bolder;" placeholder="00">
+            <br><br>
+            YEAR
+        </div>
+        <div id="month">
+            <input type="number" readonly id="outMonth" class="out" style="height: 100px; font-size: 20px; font-weight: bolder;" placeholder="00"><br><br>
+            MONTH
+        </div>
+        <div id="day">
+            <input type="number" readonly id="outDay" class="out" style="height: 100px; font-size: 20px; font-weight: bolder;" placeholder="00"><br><br>
+            DAY
+        </div>
+    </div></center>
+    <script>
+        function calc()
+        {
+       const dobinput=document.getElementById("date").value;
+       if(!dobinput)
+       {
+        alert("Please select your date of birth!");
+        return;
+       }
+       const dob=new Date(dobinput);
+       const today=new Date();
+       let years = today.getFullYear() - dob.getFullYear();
+      let months = today.getMonth() - dob.getMonth();
+      let days = today.getDate() - dob.getDate();
+       if (days < 0) {
+        months--;
+        days += new Date(today.getFullYear(), today.getMonth(), 0).getDate(); // last day of previous month
+      }
+
+      if (months < 0) {
+        years--;
+        months += 12;
+      }
+      document.getElementById("outYear").value = years;
+      document.getElementById("outMonth").value = months;
+      document.getElementById("outDay").value = days;
+        }
+    </script>
+</body>
+</html>

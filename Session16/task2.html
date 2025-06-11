@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Prime Number Generator</h1>
+    <center><table width="50%" border="2" style="height: 500px;">
+        <tr>
+            <th>Start</th>
+            <td><input type="number" name="start"></td>
+        </tr>
+        <tr>
+            <th>End</th>
+            <td><input type="number" name="end"></td>
+        </tr>
+        <tr>
+           <th rowspan="3">Prime Number</th>
+           <td><textarea rows="8" cols="50" id="prime"></textarea></td> 
+        </tr>
+        <tr>
+            <td><button onclick="check()">Generate</button></td>
+        </tr>
+    </table></center>
+    <script>
+        function prime(number)
+        {
+            for(let i=2;i<=number/2;i++)
+        {
+            if(number%i==0)
+            return false;
+        }
+        return true;
+        }
+        function check()
+        {
+        let start=parseInt(document.getElementsByName("start")[0].value);
+         let end=parseInt(document.getElementsByName("end")[0].value);
+         for(let i=start;i<=end;i++)
+         {
+            if(prime(i))
+            document.getElementById("prime").value+=i+" ";
+         }
+        }
+    </script>
+</body>
+</html>
