@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            margin: 15px;
+        }
+        button{
+            margin: 10px;
+        }
+        button:hover{
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <div style="border: 2px solid black; height: 300px; width: 300px; padding: 20px;"><form onsubmit="handleSubmit(event)">
+        1st Number: <input type="number" id="n1"><br>
+        2nd Number: <input type="number" id="n2"><br>
+        <button onclick="calc('mul')">Multiply</button>
+        <button onclick="calc('div')">Divide</button>
+    </form>
+    <div id="res"></div></div></center>
+    <script>
+        function handleSubmit(e) {
+            e.preventDefault(); // prevent form submission
+        }
+        function calc(op)
+        {
+            let n1=parseInt(document.getElementById("n1").value);
+            let n2=parseInt(document.getElementById("n2").value);
+            let res;
+            if(op=="mul")
+            res=n1*n2;
+        else
+        res=n1/n2;
+    document.getElementById("res").innerHTML="The result Is:<br/>"+res;
+        }
+    </script>
+</body>
+</html>

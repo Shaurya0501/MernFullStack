@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Password Generator</title>
+  <style>
+    body {
+      background-color: #2e2520;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background-color: #07100f;
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      color: white;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    }
+    h1 {
+      background-color: aliceblue;
+      color: black;
+      padding: 10px;
+      border-radius: 10px;
+    }
+    input[type="text"] {
+      padding: 10px;
+      border-radius: 20px;
+      border: none;
+      width: 60%;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      background: white;
+      font-weight: bold;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+    .options {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    .slider {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    input[type="range"] {
+      width: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Password - Generator</h1>
+    <div>
+      <input type="text" id="password" readonly />
+      <button onclick="copy()">Copy</button>
+    </div>
+    <div class="options">
+      <div class="slider">
+        <input type="range" min="6" max="30" value="16" id="lengthSlider" />
+        <span>Length <span id="lengthValue">16</span></span>
+      </div>
+      <label><input type="checkbox" id="includeChars" checked /> Characters</label>
+      <label><input type="checkbox" id="includeNums" checked /> Numbers</label>
+    </div>
+  </div>
+
+  <script>
+    const passwordField = document.getElementById("password");
+    const slider = document.getElementById("lengthSlider");
+    const lengthValue = document.getElementById("lengthValue");
+    const charsCheckbox = document.getElementById("includeChars");
+    const numsCheckbox = document.getElementById("includeNums");
+
+    const letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const numbers = "0123456789";
+    const symbols = "!@#$%^&*()_+[]{}|;:',.<>?/`~-=\\\"";
+
+    function generatePassword() {
+      let characters = "";
+      if (charsCheckbox.checked) characters += letters + symbols;
+      if (numsCheckbox.checked) characters += numbers;
+
+      let password = "";
+      for (let i = 0; i < slider.value; i++) {
+        password += characters.charAt(Math.floor(Math.random() * characters.length));
+      }
+      passwordField.value = password;
+    }
+
+    function copy() {
+      navigator.clipboard.writeText(passwordField.value).then(() => {
+        alert("Password copied!");
+      });
+    }
+
+    // Event Listeners (outside of copy())
+    slider.addEventListener("input", () => {
+      lengthValue.textContent = slider.value;
+      generatePassword();
+    });
+    charsCheckbox.addEventListener("change", generatePassword);
+    numsCheckbox.addEventListener("change", generatePassword);
+    window.onload = generatePassword;
+  </script>
+</body>
+</html>
