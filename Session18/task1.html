@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="time"></div>
+    <button onclick="start()">Click me</button>
+    <button onclick="stop()">stop</button>
+    <script>
+        let timer=null;
+       function updateTime()
+       {
+        const now=new Date();
+        document.getElementById("time").textContent=now.toLocaleString();
+       }
+       function start()
+       {
+        if(timer===null)
+       {
+        updateTime();
+        timer=setInterval(updateTime,1000);
+       }
+       }
+       function stop() {
+            clearInterval(timer);
+            timer = null; // Reset timer
+        }
+    </script>
+</body>
+</html>
