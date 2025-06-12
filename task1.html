@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Timer</title>
+  <style>
+    body{
+        background-color: aquamarine;
+    }
+    #timer{
+        background-color: aquamarine;
+        justify-content: center;
+        text-align: center;
+        height: 300px;
+        width: 450px;
+        padding: 20px;
+        margin-left: 300px;
+        font-size: 40px;
+    }
+    button{
+        height: 25px;
+        margin: 40px;
+        border: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="timer">
+    <h1>TIMER</h1>
+    <div id="disp">25:00</div>
+    <button onclick="start()" style="background-color:cadetblue;">START</button>
+    <button onclick="stop()" style="background-color: red;">STOP</button>
+    <button onclick="reset()" style="background-color:chartreuse;">RESET</button>
+  </div>
+
+  <script>
+    let secondsLeft = 1500; // 25 minutes
+    let interval = null;
+
+    function updateTime() {
+      let mins = Math.floor(secondsLeft / 60);
+      let secs = secondsLeft % 60;
+      document.getElementById("disp").innerHTML =
+        (mins < 10 ? "0" + mins : mins) + " : " + (secs < 10 ? "0" + secs : secs);
+
+      if (secondsLeft > 0) {
+        secondsLeft--;
+      } else {
+        clearInterval(interval);
+        interval = null;
+      }
+    }
+
+    function start() {
+      if (interval === null) {
+        updateTime(); // update immediately
+        interval = setInterval(updateTime, 1000);
+      }
+    }
+
+    function stop() {
+      clearInterval(interval);
+      interval = null;
+    }
+
+    function reset() {
+      stop();
+      secondsLeft = 1500;
+      updateTime();
+    }
+
+    updateTime(); // display initial time
+  </script>
+</body>
+</html>
