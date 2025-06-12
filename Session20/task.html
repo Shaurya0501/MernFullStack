@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlickFinder</title>
+    <style>
+        body{
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      transition: background-image 1s ease-in-out;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 2rem;
+      font-family: sans-serif;
+        }
+        #navbar{
+            position: relative;
+            top: 0;
+            height: 100px;
+            display: flex;
+            background-color: darkslateblue;
+            border-bottom: 2px solid green;
+            color: aliceblue;
+            text-align: center;
+            justify-content: center;
+        }
+        a{
+            color: white;
+            text-decoration: none;
+            font-size: 25px;
+            margin: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <div id="title" style="color:aqua; position: absolute; left: 0; background-color: black; text-align: center; padding: 35px;">Flick<span style="color: white; font-size: larger;">Finder</span></div>
+        <a href="#">Home</a>
+        <a href="#">Tv Show</a>
+        <a href="#">Movie</a>
+        <a href="#">Upcoming</a>
+        <button style="width: 100px; height: 40px; margin-top: 25px; border-top-left-radius:25px; border-bottom-right-radius: 25px; background-color: aquamarine;">Favorite</button>
+    </div>
+    <main>
+        <center style="font-size: 25px;"><h1>Bringing the Big Screen to Your Screen</h1>
+        <p>Discover, critique, and celebrate moviees with honest reviews and fresh takes on every film</p>
+    <button>Discover More...</button></center>
+    </main>
+    <script>
+        const backgrounds = [
+      "https://wallpapers.com/images/file/movie-pictures-fux91xjv9wiwhgbw.jpg",
+      "https://th.bing.com/th/id/OIP.FSzCxziSVojVC0Vlb9CKrgHaEK?rs=1&pid=ImgDetMain",
+      "https://th.bing.com/th/id/OIP.Eu739X1l3IJ7hkCEGQGoigHaEo?rs=1&pid=ImgDetMain"
+    ];
+    let current=0;
+    function changeBackground()
+    {
+        document.body.style.backgroundImage=`url('${backgrounds[current]}')`;
+        current=(current+1)%backgrounds.length;
+    }
+    changeBackground();
+    setInterval(changeBackground,5000);
+    </script>
+</body>
+</html>
