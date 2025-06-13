@@ -1,0 +1,70 @@
+.app {
+  background: #2e2e2e;
+  color: white;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+}
+
+.title {
+  font-size: 48px;
+  color: teal;
+}
+
+.button-group button {
+  background: #003333;
+  color: white;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 8px;
+  border: 1px solid teal;
+  cursor: pointer;
+}
+
+.search-bar {
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+}
+
+.search-bar input {
+  padding: 10px;
+  width: 300px;
+  border-radius: 10px 0 0 10px;
+  border: none;
+}
+
+.search-bar button {
+  padding: 10px;
+  border-radius: 0 10px 10px 0;
+  border: none;
+  background: teal;
+  color: white;
+  cursor: pointer;
+}
+
+.movie-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.movie-card {
+  background: #1f1f1f;
+  padding: 15px;
+  border-radius: 10px;
+  width: 200px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.1);
+  transition: transform 0.3s;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+}
+
+.movie-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
