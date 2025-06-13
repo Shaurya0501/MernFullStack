@@ -4,7 +4,7 @@ import MovieCard from "./components/MovieCard";
 import SearchBar from "./components/SearchBar";
 import "./App.css";
 
-const API_KEY="6d33e6e0";
+const API_KEY = process.env.REACT_APP_OMDB_API_KEY;
 const API_URL=`https://www.omdbapi.com/`;
 
 function App()
